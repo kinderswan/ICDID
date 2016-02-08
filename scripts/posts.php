@@ -1,0 +1,8 @@
+<?php
+mysql_connect('localhost', 'hleb', 'applehouse');
+mysql_select_db('beltatpvh_md01');
+$sql = mysql_query('SELECT * FROM posts ORDER BY id DESC');
+while ($post = mysql_fetch_assoc($sql)) {
+                                echo '<div style = "width: 800px; min-height: 70px; font-size: 12px; overflow: hidden;"><div style = "width: 800px; height: 8px; border: 1px dashed #999; border-style: dashed none none none;"></div><div style = "float: left; width: 120px; height: 70px; font-size: 15px; text-align: left; font-weight: bold; color: #4A0FF"><div style = "width: 120px; height: 20px; color: #4A00FF">&nbsp;'.$post['author'].'</div><div style = "width: 120px; height: 20px; font-weight: normal; color: #666; font-size: 10px;">&nbsp;'.$post['date'].'</div></div><div style = "float: left; width: 5px; height: 70px; border: 1px solid #999; border-style: none solid none none;"></div><div style = "float: left; width: 15px; height: 70px;"></div><div style = "float: left; text-align: left; width: 650px; min-height: 70px;">'.$post['text'].'</div></div><div style = "width: 800px; height: 8px; border: 1px dashed #999; border-style: none none dashed none;"></div><div style = "width: 800px"><div style = "float: right; width: 675px; height: 5px;"></div></div><div style = "width: 800px"><div style = "float: right; width: 675px; height: 20px;"><textarea onclick = "alert('."'В разработке...'".')" style = "font-family: tahoma, arial, verdana, sans-serif, Lucida Sans; font-size: 11px; border: 1px solid #999; width: 400px; height: 18px; color: #999; resize: none">Комментировать...</textarea></div></div><div style = "width: 800px"><div style = "float: right; width: 675px; height: 8px;"></div></div>';
+}
+?>
